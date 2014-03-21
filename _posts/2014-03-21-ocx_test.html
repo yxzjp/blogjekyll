@@ -6,19 +6,21 @@ title: ocx_test
 </div>
 <input type="button" id="flash" onclick="outputPlayer('flash');" value="flash"></input>
 <input type="button" id="html5" onclick="outputPlayer('html5');" value="html5"></input>
-<input type="button" id="ocx" onclick="outputPlayer('ocx');" value="ocx"></input>
+<input type="button" id="ocx" onclick="outputPlayer('ocx');" value="ocx"></input>script>
 <script src="../../../js/jquery-1.10.2.js"></script>
 <script src="http://qzs.qq.com/tencentvideo_v1/tvp/js/tvp.player_v2_film.js"></script>
 <script>
+var rect = {"width" : "500px","height":"380px"};
+$("#mod_player").css(rect);
 var video = new tvp.VideoInfo();
 video.setVid("k0014kqr1pa");
+video.setPay(1);
 var player = new tvp.Player();
 function outputPlayer(playertype) {
 	player.create({
 		"video" : video,
-		"pay": 1,
-		"width": "500px",
-		"height": "380px",
+		"width": rect.width,
+		"height": rect.height,
 		"playerType": playertype,
 		"autoplay": "1",
 		"isVodFlashShowNextBtn": false,
