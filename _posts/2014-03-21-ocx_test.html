@@ -1,0 +1,25 @@
+---
+layout:default
+title:ocx_test
+---
+<div id="mod_player">
+</div>
+<input type="button" id="flash" onclick="outputPlayer('flash');">flash</input>
+<input type="button" id="html5" onclick="outputPlayer('html5');">html5</input>
+<input type="button" id="ocx" onclick="outputPlayer('ocx');">ocx</input>
+<script src="http://qzs.qq.com/tencentvideo_v1/tvp/js/tvp.player_v2_film.js"></script>
+<script>
+var player = new tvp.Player();
+function outputPlayer(playertype) {
+	player.create({
+		"vid": "k0014kqr1pa",
+		"pay": 1,
+		"width": "500px",
+		"height": "380px",
+		"playerType": playertype,
+		"autoplay": "1",
+		"isVodFlashShowNextBtn": false,
+		"appid": "10002"
+	});
+}
+</script>
