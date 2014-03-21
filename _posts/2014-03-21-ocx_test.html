@@ -10,17 +10,19 @@ title: ocx_test
 <script src="../../../js/jquery-1.10.2.js"></script>
 <script src="http://qzs.qq.com/tencentvideo_v1/tvp/js/tvp.player_v2_film.js"></script>
 <script>
+var video = new tvp.VideoInfo();
+video.setVid("k0014kqr1pa");
 var player = new tvp.Player();
 function outputPlayer(playertype) {
 	player.create({
-		"vid": "k0014kqr1pa",
 		"pay": 1,
 		"width": "500px",
 		"height": "380px",
 		"playerType": playertype,
 		"autoplay": "1",
 		"isVodFlashShowNextBtn": false,
-		"appid": "10002"
+		"appid": "10002",
+		"modId":"mod_player"
 	});
 }
 </script>
