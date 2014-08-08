@@ -1,7 +1,8 @@
 ---
 layout: default
 title: show qrcode
-css: <link rel="stylesheet" href="http://v3.bootcss.com/examples/blog/blog.css"><link rel="stylesheet" href="{{site.url}}/css/blog.css">
+permalink: http://wajiping.com/givemove.html
+css: <link rel="stylesheet" href="http://v3.bootcss.com/examples/blog/blog.css"><link rel="stylesheet" href="css/blog.css">
 ---
 <div class="blog-masthead">
   <div class="container">
@@ -46,7 +47,10 @@ css: <link rel="stylesheet" href="http://v3.bootcss.com/examples/blog/blog.css">
       <div class="sidebar-module">
         <h4>索引</h4>
         <ol class="list-unstyled">
-          <li><a href="#">2014-08</a></li>
+	        {% for post in site.posts %}
+			<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+			{% endfor %}
+          <li>
         </ol>
       </div>
       <div class="sidebar-module">
