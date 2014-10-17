@@ -73,8 +73,8 @@ var duration = 750;
 var root;
 
 // size of the diagram
-var viewerWidth = $(document).width();
-var viewerHeight = $(document).height();
+var viewerWidth = $(document).innerWidth();
+var viewerHeight = $(document).innerHeight();
 
 var tree = d3.layout.tree()
     .size([viewerHeight, viewerWidth]);
@@ -187,7 +187,6 @@ function initiateDrag(d, domNode) {
                 return true;
             }).remove();
     }
-
     // remove parent link
     parentLink = tree.links(tree.nodes(draggingNode.parent));
     svgGroup.selectAll('path.link').filter(function(d, i) {

@@ -1,0 +1,8 @@
+html,body,header,section,article{
+	margin:0;
+	padding:0;
+}
+.menu{
+	height:40px;
+	background:#666;
+}

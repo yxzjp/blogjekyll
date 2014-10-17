@@ -1,11 +1,36 @@
 ---
 layout: default
-title: stanleyyu
+css: <link rel="stylesheet" href="css/morning.css">
+title: morning flower
 ---
-<h2>{{ page.title }}</h2>
-<p>全部列表</p>
-<ul>
-{% for post in site.posts %}
-<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
+<header class="menu">
+	<div class="icon"></div>
+	<div class="booknow"></div>
+	<div class="login"></div>
+</header>
+<section class="bigpic">
+	<article>
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="txt"></div>
+	</article>
+</section>
+<section class="bigpic">
+	<article>
+		<div class="full"></div>
+	</article>
+</section>
+<section class="bigpic">
+	<article>
+		<div class="full"></div>
+	</article>
+</section>
+<section class="pos">
+	<article>
+		<ul>
+			<li>立即预定</li>
+			<li>花样展示</li>
+			<li>与我联系</li>
+		</ul>
+	</article>
+</section>
