@@ -3,17 +3,25 @@ html,body,header,section,article{
 	padding:0;
 }
 .menu{
+	width:100%;
 	height:40px;
 	background:#666;
+	position: fixed;
+	_position:absolute;
+	left: 0;
+	top:0;
 }
 a{
 	color:#fff;
 	text-decoration: none;
+	font-family: microsoft yahei;
+	font-size: 15px;
 }
 .booknow,.login{
-	font: normal bold 15px/40px microsoft yakei;
+	font: normal bold 15px/40px microsoft yahei;
 	float:right;
 	margin:0 5px;
+	transition:background 300ms;
 }
 .booknow:hover,.login:hover{
 	background: #000;
@@ -23,5 +31,99 @@ a{
 	height :20px;
 	line-height: 20px;
 	margin: 10px 0;
-	border-left: 1px solid #fff;
+	color : #fff;
+	/*border-left: 1px solid #fff;*/
+}
+.bookmod {
+	height : 800px;
+	background: #c1d8e1 url(../../images/cs.png) no-repeat center;
+}
+.showmod {
+	height : 740px;
+	background: #7d949f url(../../images/frz.png) no-repeat center;
+}
+.contactmod {
+	height : 740px;
+	background: #659392 url(../../images/zjj.png) no-repeat center;
+}
+.pos {
+	position:fixed;
+	_position:absolute;
+	right : 80px;
+	bottom:300px;
+}
+.pos .listtool {
+	height: 200px;
+	border-left:1px solid #ff0;
+	position: absolute;
+}
+.pos .listtool .dot{
+	width:20px;
+	height:20px;
+	background: url(../../images/button.png) no-repeat center;
+	position: absolute;
+	left: -10px;
+}
+.pos .listtool .up{
+	top: -10px;
+}
+.pos .listtool .bottom{
+	bottom: -10px;
+}
+.pos ul{
+	top:0;
+	list-style: none;
+}
+.pos ul .dot{
+	width:20px;
+	height:20px;
+	background: url(../../images/normallist.png) no-repeat center;
+	position: absolute;
+	left: -10px;
+	cursor: pointer;
+}
+.pos ul .dot:hover{
+	background: url(../../images/onlist.png) no-repeat center;
+}
+.pos ul li{
+	margin:30px;
+	padding:0;
+}
+.pos a{
+	color:#ff2299;
+}
+.pos a:hover{
+	color:#22ff99;
+}
+.pos .current .dot{
+	background: url(../../images/onlist.png) no-repeat center;
+}
+.pos .current a{
+	color:#22ff99;
+}
+.gotop {
+	position:fixed;
+	_position:absolute;
+	right : 80px;
+	bottom:100px;
+	background: #ddd url(../../images/top2.png) no-repeat center;
+	width:60px;
+	height:60px;
+	opacity: 0.5;
+}
+.gotop:hover{
+	animation: gotop 3s ease infinite;
+	-webkit-animation: gotop 3s ease infinite;
+}
+@-webkit-keyframes gotop {
+	0% {bottom:100px;}
+	50% {bottom:114px;}
+	75% {bottom:120px;}
+	100% {bottom:100px;}
+}
+@keyframes gotop {
+	0% {bottom:100px;}
+	50% {bottom:114px;}
+	75% {bottom:120px;}
+	100% {bottom:100px;}
 }
