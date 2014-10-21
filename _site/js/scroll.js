@@ -10,8 +10,8 @@
 	Scroller.prototype.init = function(){
 		var self = this;
 		if(window.addEventListener){
-			window.addEventListener("MouseWheelscroll",function(e){
-				self.go(e.wheelDelta);
+			window.addEventListener("DOMMouseScroll",function(e){
+				self.go(-e.detail);
 				e.preventDefault();
 			});
 			window.addEventListener("mousewheel",function(e){
@@ -22,10 +22,10 @@
 				e.preventDefault();
 			});
 		} else {
-			window.attachEvent("mousewheel",function(e){
-				self.go(-e.detail);
+			window.onmousewheel = document.onmousewheel = function(e){
+				self.go(e.wheelDelta);
 				e.returnValue = false;
-			});
+			};
 		}
 	}
 	Scroller.prototype.bindTrigger = function(){
@@ -51,10 +51,10 @@
 	}
 	Scroller.prototype.scroll = function(page){
 		var self = this;
+		if(page < 0) return ;
 		this.curPage = (page === "undefined" ? this.curPage : page);
-		if(this.curPage < 0) return ;
 		this.scrolling = true;
-		$('body').animate({
+		$('html,body').animate({
 			scrollTop : self.mods.eq(self.curPage).offset().top
 		},1000,function(){
 			self.scrolling = false;
