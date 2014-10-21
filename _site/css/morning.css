@@ -18,10 +18,14 @@ a{
 	font-size: 15px;
 }
 .booknow,.login{
+	height:40px;
 	font: normal bold 15px/40px microsoft yahei;
 	float:right;
 	margin:0 5px;
 	transition:background 300ms;
+}
+.login img{
+	margin: 8px 0;
 }
 .booknow:hover,.login:hover{
 	background: #000;
