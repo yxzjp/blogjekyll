@@ -27,6 +27,13 @@ a{
 .login img{
 	margin: 8px 0;
 }
+.login img.fill{
+	margin:0;
+	float:left;
+}
+.login .nickname {
+	color:#f00;
+}
 .booknow:hover,.login:hover{
 	background: #000;
 }
