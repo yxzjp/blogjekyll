@@ -1,0 +1,21 @@
+{
+  "name": "morning-flower",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Morning flower"
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-cmd-transport": "~0.4.1"
+  },
+  "dependencies" : {}
+}
