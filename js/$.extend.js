@@ -1,5 +1,5 @@
 (function($) {
-	$.entend($, {
+	$.extend($, {
 		getUrlParam: function(p, l) {
 			var r = new RegExp("[\?&]+" + p + "=([^&#]+)", "gi");
 			var m = r.exec(l || location.href);
@@ -23,5 +23,5 @@
 			"bottom": $(mod).offset().top + mod.scrollTop + docscrol.top + mod.clientHeight
 		}
 		return pos.left+$(this).width() >= modpos.left && pos.top+$(this).height() >= modpos.top && pos.left <= modpos.right && pos.top <= modpos.bottom;
-	}
-})($)
+	};
+})($);

@@ -13,8 +13,7 @@ module.exports = function(grunt) {
 					"./release/core.js" : [
 						"jquery-1.10.2.min.js",
 						"$.extend.js",
-						"underscore-min.js",
-						"underscore-min.map"
+						"underscore-min.js"
 					],
 					"./release/index.js" :[
 						"scroll.js",
@@ -60,7 +59,10 @@ module.exports = function(grunt) {
 					src: ['module/*.js'],
 					dest: '.build/',
 					filter: 'isFile'
-				}]
+				},
+				{"release/underscore-min.map":"./underscore-min.map"},
+				{"release/underscore.js":"./underscore.js"},
+				]
 			}
 	    },
 	    "clean": {
