@@ -2,7 +2,7 @@
 	var conf = {
 	  btnId : "qqLoginBtn",//插入按钮的html标签id
 	  size : "B_M",//按钮尺寸
-	  scope : "all",//展示授权，全部可用授权可填 all
+	  scope : "get_user_info",//展示授权，全部可用授权可填 all
 	  display : "pc"//应用场景，可选
 	 }
 	var loginFn = function(){
