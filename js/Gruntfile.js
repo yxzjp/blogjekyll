@@ -11,15 +11,26 @@ module.exports = function(grunt) {
 			dev : {
 				"files" : {
 					"./release/core.js" : [
-						".build/jquery-1.10.2.min.js",
-						".build/underscore-min.js",
-						".build/underscore-min.map",
+						"jquery-1.10.2.min.js",
+						"$.extend.js",
+						"underscore-min.js",
+						"underscore-min.map"
 					],
 					"./release/index.js" :[
-						".build/scroll.js",
-						".build/login.js"
+						"scroll.js",
+						"login.js"
 					]
 				}
+			}
+		},
+		"uglify" : {
+			options : {
+				banner : "/*!<%=pkg.name%> - <%=pkg.version%> - <%=grunt.template.today('YYYY-MM-DD')%>*/"
+			},
+			target : {
+				files : [
+					{"./release/dest/index.js" : "./release/src/index.js"}
+				]
 			}
 		},
 		"watch": {
@@ -46,7 +57,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: '.',
-					src: ['*.js','module/*.js'],
+					src: ['module/*.js'],
 					dest: '.build/',
 					filter: 'isFile'
 				}]
@@ -60,15 +71,23 @@ module.exports = function(grunt) {
 					src: ['**/*'],
 					filter: 'isFile'
 	    		}]
+	    	},
+	    	"release" : {
+	    		files: [{
+	    			expand: true,
+					cwd: 'release',
+					src: ['**/*']
+	    		}]
 	    	}
 	    }
 	});
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-cmd-transport');
 
-	grunt.registerTask('dist', ['clean:build','copy', 'transport', 'concat']);
+	grunt.registerTask('dist', ['clean','copy', 'transport', 'concat']);
 	grunt.registerTask('default', ['dist']);
 }

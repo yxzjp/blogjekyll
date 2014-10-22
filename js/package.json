@@ -15,7 +15,8 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-copy": "*",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-cmd-transport": "~0.4.1"
+    "grunt-cmd-transport": "~0.4.1",
+    "grunt-contrib-uglify": "~0.6.0"
   },
   "dependencies" : {}
 }
